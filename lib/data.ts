@@ -9,6 +9,7 @@ export const templates: Template[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     thumbnail: "/images/templates/elegance/elegance1.png",
     screenshots: [
+      "/images/templates/elegance/elegance1.png",
       "/images/templates/elegance/elegance2.png",
     ],
   },
@@ -20,6 +21,7 @@ export const templates: Template[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     thumbnail: "/images/templates/minimal/minimal1.png",
     screenshots: [
+      "/images/templates/minimal/minimal1.png",
       "/images/templates/minimal/minimal2.png",
       "/images/templates/minimal/minimal3.png",
       "/images/templates/minimal/minimal4.png",
