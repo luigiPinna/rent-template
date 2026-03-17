@@ -7,11 +7,9 @@ export const templates: Template[] = [
     description:
       "Template elegante e moderno pensato per B&B di charme. Design sofisticato con galleria immagini prominente, sezione camere dettagliata e sistema di prenotazione integrato.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    thumbnail: "https://picsum.photos/seed/elegance/800/450",
+    thumbnail: "/images/templates/elegance/elegance1.png",
     screenshots: [
-      "https://picsum.photos/seed/elegance1/1200/675",
-      "https://picsum.photos/seed/elegance2/1200/675",
-      "https://picsum.photos/seed/elegance3/1200/675",
+      "/images/templates/elegance/elegance2.png",
     ],
   },
   {
@@ -20,11 +18,11 @@ export const templates: Template[] = [
     description:
       "Template essenziale e pulito per affittacamere e B&B moderni. Design bianco e minimalista, spazio bianco generoso, focus sulle foto della struttura e prenotazione diretta immediata.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    thumbnail: "https://picsum.photos/seed/minimal/800/450",
+    thumbnail: "/images/templates/minimal/minimal1.png",
     screenshots: [
-      "https://picsum.photos/seed/minimal1/1200/675",
-      "https://picsum.photos/seed/minimal2/1200/675",
-      "https://picsum.photos/seed/minimal3/1200/675",
+      "/images/templates/minimal/minimal2.png",
+      "/images/templates/minimal/minimal3.png",
+      "/images/templates/minimal/minimal4.png",
     ],
   },
 ];
