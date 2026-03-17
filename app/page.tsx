@@ -1,65 +1,128 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Smartphone,
+  Search,
+  Zap,
+  Shield,
+  LayoutTemplate,
+  HeartHandshake,
+} from "lucide-react";
 
-export default function Home() {
+const features = [
+  {
+    icon: Smartphone,
+    title: "100% Responsive",
+    description: "Perfetto su qualsiasi dispositivo: smartphone, tablet e desktop.",
+  },
+  {
+    icon: Search,
+    title: "SEO Ottimizzato",
+    description: "Struttura tecnica pensata per posizionarsi sui motori di ricerca.",
+  },
+  {
+    icon: Zap,
+    title: "Caricamento Veloce",
+    description: "Performance elevate per non perdere visitatori impazienti.",
+  },
+  {
+    icon: Shield,
+    title: "Sicuro e Affidabile",
+    description: "Certificati SSL, backup regolari e protezione da attacchi.",
+  },
+  {
+    icon: LayoutTemplate,
+    title: "Facile da Gestire",
+    description: "Aggiorna testi, foto e disponibilità in autonomia, senza tecnici.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Supporto Dedicato",
+    description: "Siamo qui per te anche dopo la messa online del sito.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-b from-primary/5 to-background py-20 md:py-32">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-primary mb-6">
+            <span>✦</span>
+            <span>Template professionali per l&apos;hospitality</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto">
+            Siti web professionali per{" "}
+            <span className="text-primary">B&B e Affittacamere</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+            Trasforma la tua struttura ricettiva con un sito elegante, veloce e
+            ottimizzato per le prenotazioni dirette. Smetti di pagare commissioni
+            ai portali di terze parti.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="gap-2">
+              <Link href="/template">
+                Scopri i Template
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/contatti">Parlaci del tuo progetto</Link>
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Tutto quello che ti serve
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              I nostri template sono progettati specificamente per le strutture ricettive,
+              con tutte le funzionalità necessarie già incluse.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature) => (
+              <Card key={feature.title} className="border-border/50 hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <div className="p-2 w-fit rounded-lg bg-primary/10 text-primary mb-4">
+                    <feature.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Pronto a fare il salto?
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+            Guarda i nostri template e scegli quello più adatto alla tua struttura.
+            Poi contattaci per personalizzarlo.
+          </p>
+          <Button asChild size="lg" className="gap-2">
+            <Link href="/template">
+              Vedi tutti i template
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
