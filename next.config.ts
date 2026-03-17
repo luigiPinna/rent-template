@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
   basePath: isProd ? "/rent-template" : "",
   assetPrefix: isProd ? "/rent-template" : "",
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./imageLoader.ts",
     remotePatterns: [
       {
         protocol: "https",
