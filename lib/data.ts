@@ -32,17 +32,17 @@ export const templates: Template[] = [
 export const teamMembers: TeamMember[] = [
   {
     id: "member-1",
-    name: "Marco Rossi",
-    role: "Web Developer & Co-founder",
-    bio: "Sviluppatore full-stack con 8+ anni di esperienza. Specializzato in applicazioni web moderne con React e Next.js. Appassionato di UX design e performance web.",
-    avatar: "https://i.pravatar.cc/150?img=8",
+    name: "Luigi Pinna",
+    role: "Software Engineer & Architect",
+    bio: "Ingegnere del software con esperienza nella progettazione di architetture scalabili e applicazioni web moderne. Specializzato in Next.js, TypeScript e sistemi cloud. Trasforma idee complesse in prodotti digitali solidi e performanti.",
+    avatar: "https://i.pravatar.cc/150?img=12",
   },
   {
     id: "member-2",
-    name: "Giulia Ferrari",
-    role: "UX Designer & Co-founder",
-    bio: "Designer con background in comunicazione visiva. Crea interfacce intuitive e belle che convertono visitatori in clienti. Esperta in branding per il settore hospitality.",
-    avatar: "https://i.pravatar.cc/150?img=47",
+    name: "Matteo Scano",
+    role: "Software Engineer & UI/UX Designer",
+    bio: "Sviluppatore e designer con un occhio attento all'esperienza utente. Combina competenze tecniche e sensibilità estetica per creare interfacce belle e intuitive. Esperto in design systems e prototipazione rapida.",
+    avatar: "https://i.pravatar.cc/150?img=33",
   },
 ];
 

@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { teamMembers } from "@/lib/data";
 import { TeamCard } from "@/components/team/TeamCard";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Chi Siamo",
@@ -45,7 +43,7 @@ export default function TeamPage() {
       </div>
 
       {/* Team */}
-      <div className="mb-16">
+      <div className="mb-0">
         <h2 className="text-2xl font-bold text-center mb-8">Il Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {teamMembers.map((member) => (
@@ -54,16 +52,6 @@ export default function TeamPage() {
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="text-center">
-        <h2 className="text-xl font-semibold mb-3">Vuoi lavorare con noi?</h2>
-        <p className="text-muted-foreground mb-6">
-          Raccontaci del tuo progetto. Saremo felici di aiutarti.
-        </p>
-        <Button asChild>
-          <Link href="/contatti">Contattaci</Link>
-        </Button>
-      </div>
     </div>
   );
 }
