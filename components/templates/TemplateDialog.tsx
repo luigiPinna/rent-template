@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
 interface TemplateDialogProps {
   template: Template;
@@ -19,22 +19,42 @@ interface TemplateDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const ZOOM_STEPS = [1, 1.5, 2, 3];
+
 export function TemplateDialog({ template, open, onOpenChange }: TemplateDialogProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [zoomIndex, setZoomIndex] = useState(0);
 
-  const goToPrev = () =>
+  const zoom = ZOOM_STEPS[zoomIndex];
+
+  const goToPrev = () => {
     setCurrentIndex((prev) =>
       prev === 0 ? template.screenshots.length - 1 : prev - 1
     );
+    setZoomIndex(0);
+  };
 
-  const goToNext = () =>
+  const goToNext = () => {
     setCurrentIndex((prev) =>
       prev === template.screenshots.length - 1 ? 0 : prev + 1
     );
+    setZoomIndex(0);
+  };
 
-  const handleOpenChange = (open: boolean) => {
-    if (!open) setCurrentIndex(0);
-    onOpenChange(open);
+  const handleOpenChange = (isOpen: boolean) => {
+    if (!isOpen) {
+      setCurrentIndex(0);
+      setZoomIndex(0);
+    }
+    onOpenChange(isOpen);
+  };
+
+  const zoomIn = () => setZoomIndex((prev) => Math.min(prev + 1, ZOOM_STEPS.length - 1));
+  const zoomOut = () => setZoomIndex((prev) => Math.max(prev - 1, 0));
+  const resetZoom = () => setZoomIndex(0);
+
+  const handleImageClick = () => {
+    setZoomIndex((prev) => (prev + 1) % ZOOM_STEPS.length);
   };
 
   return (
@@ -54,16 +74,71 @@ export function TemplateDialog({ template, open, onOpenChange }: TemplateDialogP
 
         {/* Gallery */}
         <div className="relative bg-muted/50">
-          {/* Main image */}
-          <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
-            <Image
-              src={template.screenshots[currentIndex]}
-              alt={`Screenshot ${currentIndex + 1} di ${template.name}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 896px"
-              priority
-            />
+          {/* Zoom controls */}
+          <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
+            {zoom > 1 && (
+              <span className="text-xs bg-background/80 px-2 py-1 rounded shadow-md text-muted-foreground">
+                {Math.round(zoom * 100)}%
+              </span>
+            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 bg-background/80 hover:bg-background shadow-md"
+              onClick={zoomOut}
+              disabled={zoomIndex === 0}
+              aria-label="Zoom out"
+            >
+              <ZoomOut className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 bg-background/80 hover:bg-background shadow-md"
+              onClick={resetZoom}
+              disabled={zoomIndex === 0}
+              aria-label="Reset zoom"
+            >
+              <RotateCcw className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 bg-background/80 hover:bg-background shadow-md"
+              onClick={zoomIn}
+              disabled={zoomIndex === ZOOM_STEPS.length - 1}
+              aria-label="Zoom in"
+            >
+              <ZoomIn className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Scrollable image container */}
+          <div
+            className="overflow-auto"
+            style={{
+              maxHeight: "70vh",
+              cursor: zoom < ZOOM_STEPS[ZOOM_STEPS.length - 1] ? "zoom-in" : "zoom-out",
+            }}
+          >
+            <div
+              style={{
+                width: `${zoom * 100}%`,
+                minWidth: "100%",
+                transition: "width 0.2s ease",
+              }}
+              onClick={handleImageClick}
+            >
+              <Image
+                src={template.screenshots[currentIndex]}
+                alt={`Screenshot ${currentIndex + 1} di ${template.name}`}
+                width={1600}
+                height={2400}
+                style={{ width: "100%", height: "auto", display: "block" }}
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
+            </div>
           </div>
 
           {/* Navigation buttons */}
@@ -97,13 +172,16 @@ export function TemplateDialog({ template, open, onOpenChange }: TemplateDialogP
             <span className="text-sm text-muted-foreground">
               {currentIndex + 1} / {template.screenshots.length}
             </span>
+            <span className="text-xs text-muted-foreground">
+              Clicca sull&apos;immagine per zoomare
+            </span>
           </div>
-          {/* Thumbnail dots */}
+          {/* Thumbnails */}
           <div className="flex gap-2 flex-wrap">
             {template.screenshots.map((src, idx) => (
               <button
                 key={idx}
-                onClick={() => setCurrentIndex(idx)}
+                onClick={() => { setCurrentIndex(idx); setZoomIndex(0); }}
                 className={`relative w-16 h-10 rounded overflow-hidden border-2 transition-all ${
                   idx === currentIndex
                     ? "border-primary opacity-100"
