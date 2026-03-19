@@ -45,6 +45,7 @@ export default function ContattiPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Telefono</p>
+                  <p className="text-sm text-muted-foreground">+39 351 59 22 461</p>
                   <p className="text-sm text-muted-foreground">+39 340 685 2842</p>
                 </div>
               </div>

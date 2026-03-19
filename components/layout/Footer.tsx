@@ -47,6 +47,7 @@ export function Footer() {
             <h3 className="font-semibold mb-3 text-sm">Contatti</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>stayweb.hospitality@gmail.com</p>
+              <p>+39 351 59 22 461</p>
               <p>+39 340 685 2842</p>
               <p>Italia</p>
             </div>
