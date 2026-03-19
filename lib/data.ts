@@ -30,18 +30,18 @@ export const templates: Template[] = [
 ];
 
 export const teamMembers: TeamMember[] = [
-  {
-    id: "member-1",
-    name: "Luigi Pinna",
-    role: "Software Engineer & Architect",
-    bio: "Ingegnere del software con esperienza nella progettazione di architetture scalabili e applicazioni web moderne. Specializzato in Next.js, TypeScript e sistemi cloud. Trasforma idee complesse in prodotti digitali solidi e performanti.",
-    avatar: "https://i.pravatar.cc/150?img=12",
-  },
+ {
+  id: "member-1",
+  name: "Luigi Pinna",
+  role: "Software Engineer & Architect",
+  bio: "Software Engineer con esperienza nello sviluppo di soluzioni software per grandi istituti bancari e imprese strutturate. Si concentra sulla progettazione di sistemi backend scalabili, combinando solidità tecnica e attenzione al risultato. Lavora principalmente con Python, AI e LLM per applicazioni web e sistemi di automazione dei processi, con esperienza anche lato frontend e UI. Affianca i clienti trasformando esigenze complesse in soluzioni digitali concrete ed efficaci.",
+  avatar: "https://i.pravatar.cc/150?img=12",
+},
   {
     id: "member-2",
     name: "Matteo Scano",
     role: "Software Engineer & UI/UX Designer",
-    bio: "Sviluppatore Full Stack con esperienza nello sviluppo di siti e applicazioni web per Pubbliche Amministrazioni e aziende private. Lavoro quotidianamente con PHP, JavaScript, Next.js, Joomla e WordPress, curando sia la parte frontend (interfacce accessibili e responsive) sia l’integrazione con backend, database e servizi esterni. Ho una forte attitudine alla consulenza tecnica: affianco i clienti nella raccolta dei requisiti, propongo soluzioni digitali sostenibili e li accompagno in tutte le fasi del progetto, dal concept al rilascio e alla manutenzione evolutiva.",
+    bio: "Sviluppatore Full Stack con esperienza nello sviluppo di siti e applicazioni web per Pubbliche Amministrazioni e aziende private. Lavoro quotidianamente con PHP, JavaScript, Next.js, Joomla e WordPress, curando sia la parte frontend (interfacce accessibili e responsive) sia l’integrazione con backend, database e servizi esterni. Affianco i clienti nella raccolta dei requisiti, propongo soluzioni digitali sostenibili e li accompagno in tutte le fasi del progetto, dal concept al rilascio e alla manutenzione evolutiva.",
     avatar: "https://i.pravatar.cc/150?img=33",
   },
 ];

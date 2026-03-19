@@ -36,7 +36,7 @@ export default function ContattiPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">info@stayweb.it</p>
+                  <p className="text-sm text-muted-foreground">stayweb.hospitality@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -45,7 +45,7 @@ export default function ContattiPage() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Telefono</p>
-                  <p className="text-sm text-muted-foreground">+39 000 000 0000</p>
+                  <p className="text-sm text-muted-foreground">+39 340 685 2842</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

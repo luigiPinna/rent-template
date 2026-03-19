@@ -29,6 +29,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -42,11 +43,21 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Form data:", data);
-    setIsLoading(false);
-    setSubmitted(true);
+    setError(null);
+    try {
+      const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+      const res = await fetch(`https://formspree.io/f/${formId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError("Si è verificato un errore. Riprova o scrivici direttamente via email.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (submitted) {
@@ -129,6 +140,10 @@ export function ContactForm() {
             </FormItem>
           )}
         />
+
+        {error && (
+          <p className="text-sm text-destructive">{error}</p>
+        )}
 
         <Button type="submit" disabled={isLoading} className="w-full gap-2 sm:w-auto">
           {isLoading ? (

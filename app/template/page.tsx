@@ -14,8 +14,9 @@ export default function TemplatePage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">I Nostri Template</h1>
         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          Soluzioni web pronte all&apos;uso, pensate appositamente per B&B e strutture
-          ricettive. Ogni template è personalizzabile e ottimizzato per le prenotazioni.
+          Questi template sono il punto di partenza — ognuno è personalizzabile su misura
+          per la tua struttura. Se hai esigenze specifiche, realizziamo anche soluzioni
+          completamente custom, pensate da zero per te.
         </p>
       </div>
 

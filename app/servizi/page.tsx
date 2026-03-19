@@ -34,7 +34,7 @@ export default function ServiziPage() {
         <h2 className="text-2xl font-bold text-center mb-8">Come Lavoriamo</h2>
         <div className="space-y-6">
           {[
-            { step: "01", title: "Consulenza Iniziale", desc: "Analizziamo la tua struttura, i tuoi obiettivi e il tuo pubblico target per identificare la soluzione più adatta." },
+            { step: "01", title: "Analisi delle Esigenze", desc: "Analizziamo la tua struttura, i tuoi obiettivi e il tuo pubblico target per identificare la soluzione più adatta." },
             { step: "02", title: "Proposta e Design", desc: "Ti presentiamo una proposta personalizzata con mockup del sito e pianificazione dei contenuti." },
             { step: "03", title: "Sviluppo e Testing", desc: "Realizziamo il sito seguendo le best practice, testando su tutti i dispositivi prima del lancio." },
             { step: "04", title: "Go Live e Formazione", desc: "Mettiamo online il sito e ti formiamo per gestirlo in autonomia. Rimaniamo disponibili per il supporto." },
