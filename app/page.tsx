@@ -28,16 +28,6 @@ const features = [
     description: "Performance elevate per non perdere visitatori impazienti.",
   },
   {
-    icon: Shield,
-    title: "Sicuro e Affidabile",
-    description: "Certificati SSL, backup regolari e protezione da attacchi.",
-  },
-  {
-    icon: LayoutTemplate,
-    title: "Facile da Gestire",
-    description: "Aggiorna testi, foto e disponibilità in autonomia, senza tecnici.",
-  },
-  {
     icon: HeartHandshake,
     title: "Supporto Dedicato",
     description: "Siamo qui per te anche dopo la messa online del sito.",
@@ -55,7 +45,7 @@ export default function HomePage() {
             <span>Template professionali per l&apos;hospitality</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto">
-            Siti web professionali per{" "}
+            Siti web per{" "}
             <span className="text-primary">B&B e Affittacamere</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
@@ -85,7 +75,7 @@ export default function HomePage() {
               Tutto quello che ti serve
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              I nostri template sono progettati specificamente per le strutture ricettive,
+              I nostri lavori sono progettati specificamente per le strutture ricettive,
               con tutte le funzionalità necessarie già incluse.
             </p>
           </div>

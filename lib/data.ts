@@ -41,7 +41,7 @@ export const teamMembers: TeamMember[] = [
     id: "member-2",
     name: "Matteo Scano",
     role: "Software Engineer & UI/UX Designer",
-    bio: "Sviluppatore e designer con un occhio attento all'esperienza utente. Combina competenze tecniche e sensibilità estetica per creare interfacce belle e intuitive. Esperto in design systems e prototipazione rapida.",
+    bio: "Sviluppatore Full Stack con esperienza nello sviluppo di siti e applicazioni web per Pubbliche Amministrazioni e aziende private. Lavoro quotidianamente con PHP, JavaScript, Next.js, Joomla e WordPress, curando sia la parte frontend (interfacce accessibili e responsive) sia l’integrazione con backend, database e servizi esterni. Ho una forte attitudine alla consulenza tecnica: affianco i clienti nella raccolta dei requisiti, propongo soluzioni digitali sostenibili e li accompagno in tutte le fasi del progetto, dal concept al rilascio e alla manutenzione evolutiva.",
     avatar: "https://i.pravatar.cc/150?img=33",
   },
 ];
